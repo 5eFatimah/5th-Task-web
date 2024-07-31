@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 with Servo</title>
+</head>
+<style>
+    * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 20px;
+        }
+        #pi_input{
+            width: 300px; 
+            height: 20px; 
+        }
+</style>
+<body>
+    <div class="container">
+        <h1>ESP32 with Servo</h1>
+        <p>Value: <output id="value"></output></p>
+        <input id="pi_input" type="range" min="0" max="180" value="0" step="any" list="values"/>
+
+        <datalist id="values">
+            <option value="0" label="0"></option>
+            <option value="30" label="30"></option>
+            <option value="60" label="60"></option>
+            <option value="90" label="90"></option>
+            <option value="120" label="120"></option>
+            <option value="150" label="150"></option>
+            <option value="180" label="180"></option>
+        </datalist>
+    </div>
+
+    <script>
+        const value = document.querySelector("#value");
+        const input = document.querySelector("#pi_input");
+        value.textContent = input.value;
+        input.addEventListener("input", (event) => {
+            value.textContent = event.target.value;
+        });
+    </script>
+</body>
+</html>
