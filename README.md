@@ -38,5 +38,8 @@
 
   ![](imgs/task5.png)
   ![](imgs/task5-1.jpg)
+
+
+  ## 2- Send the angle value to the ESP32 directly 
     
     
